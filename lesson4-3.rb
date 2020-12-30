@@ -24,16 +24,22 @@ num6 = rand(0..9)
 num7 = rand(0..9)
 num8 = rand(0..9)
 num9 = rand(0..9)
+
+puts "ゲームスタート！！3回エンターキーを押してください！"
+
+push = gets
 puts "----------------"
 puts "|#{num1}|||"
 puts "|#{num2}|||"
 puts "|#{num3}|||"
 
+push = gets
 puts "----------------------"
 puts "|#{num1}|#{num4}||"
 puts "|#{num2}|#{num5}||"
 puts "|#{num3}|#{num6}||"
 
+push = gets
 puts "----------------------"
 puts "|#{num1}|#{num4}|#{num7}|"
 puts "|#{num2}|#{num5}|#{num8}|"
@@ -45,6 +51,24 @@ if (num2 == 7) && (num5 == 7) && (num8 == 7)
   puts "100コイン獲得！！"
   point = point + 500 
   coin = coin + 100
+elsif (num2 == num5) && (num5 == num8)
+  puts "当たり！！数字が揃いました！！"
+  puts "200ポイントを獲得！！"
+  puts "50コイン獲得！！"
+  point = point + 200 
+  coin = coin + 50
+elsif (num1 == num5) && (num5 == num9)
+  puts "当たり！！数字が揃いました！！"
+  puts "200ポイントを獲得！！"
+  puts "50コイン獲得！！"
+  point = point + 200 
+  coin = coin + 50
+elsif (num3 == num5) && (num5 == num7)
+  puts "当たり！！数字が揃いました！！"
+  puts "200ポイントを獲得！！"
+  puts "50コイン獲得！！"
+  point = point + 200 
+  coin = coin + 50
 end
 if coin == 0
   puts "コインが足りません。チャージしてください。"
@@ -54,7 +78,7 @@ end
  select_number = gets.to_i
 
  if select_number == 2
-   puts "終了しました"
+   puts "終了しました。"
    break
  end
 end
